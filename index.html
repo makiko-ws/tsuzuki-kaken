@@ -38,22 +38,30 @@
     }
     .sheet {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 28px;
-      padding: 28px 16px 8px;
+      direction: rtl;
+      gap: 20px;
+      padding: 28px 24px 12px;
+      overflow-x: auto;
     }
     figure {
       margin: 0;
-      width: min(560px, 100%);
+      direction: ltr;
+      flex: 0 0 auto;
+      position: relative;
+      width: min(92vw, 760px);
+      aspect-ratio: 1024 / 768;
     }
     figure img {
-      display: block;
-      width: 100%;
-      height: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: calc(100% * 768 / 1024);
+      height: calc(100% * 1024 / 768);
+      max-width: none;
       background: #fff;
       border: 1px solid var(--line);
       box-shadow: 0 10px 28px rgba(40, 32, 20, 0.08);
+      transform: translate(-50%, -50%) rotate(-90deg);
     }
     figcaption {
       margin-top: 8px;
@@ -108,7 +116,7 @@
 <body>
   <header>
     <h1>都筑家憲</h1>
-    <p class="lead">筆跡が原文です。写真は右から左へ読む順に並べ、同じ画面の重複は除いてあります。下の文は、お手持ちの現代語訳です。</p>
+    <p class="lead">筆跡が原文です。写真は右から左へ、横一列に並べてあります。下の文は、お手持ちの現代語訳です。</p>
   </header>
 
   <div class="sheet" aria-label="都筑家憲の筆跡">
